@@ -1,0 +1,8 @@
+extends:
+  - './react.yml'
+  - plugin:cypress/recommended
+plugins:
+  - cypress
+rules:
+  max-nested-callbacks: off
+  max-statements: off
