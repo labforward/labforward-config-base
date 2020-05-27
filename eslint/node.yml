@@ -1,0 +1,8 @@
+extends:
+  - './base.yml'
+  - './import.yml'
+parserOptions:
+  ecmaVersion: 6
+  sourceType: 'module'
+env:
+  node: true

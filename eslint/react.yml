@@ -1,0 +1,26 @@
+extends:
+  - './base.yml'
+  - './import.yml'
+  - 'plugin:react/recommended'
+  - 'prettier/react'
+plugins:
+  - react
+parserOptions:
+  ecmaVersion: 6
+  sourceTypes: module
+  ecmaFeatures:
+    jsx: true
+    modules: true
+settings:
+  react:
+    version: detect
+env:
+  browser: true
+  jquery: true
+  es6: true
+globals:
+  I18n: false
+  process: true
+rules:
+  react/jsx-uses-vars: error
+  react/prop-types: error
