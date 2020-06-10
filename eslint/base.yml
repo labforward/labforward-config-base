@@ -169,7 +169,6 @@ rules:
   unicode-bom: ['error', 'never']
   # ECMAScript 6
   arrow-body-style: error
-  no-confusing-arrow: error
   no-useless-computed-key: error
   no-useless-constructor: error
   no-useless-rename: error
