@@ -8,6 +8,7 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
+    "prettier:check": "npx eslint --print-config *.js | eslint-config-prettier-check",
     "snapshots": "yarn snapshots:js && yarn snapshots:ts",
     "snapshots:js": "mkdir -p snapshots && eslint --print-config *.js > snapshots/eslint-js.json",
     "snapshots:ts": "mkdir -p snapshots && eslint --print-config *.ts > snapshots/eslint-ts.json"

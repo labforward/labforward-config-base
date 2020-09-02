@@ -247,20 +247,11 @@
     "consistent-return": [
       "error"
     ],
-    "curly": [
-      "error",
-      "multi-line",
-      "consistent"
-    ],
     "default-case": [
       "error"
     ],
     "default-param-last": [
       "error"
-    ],
-    "dot-location": [
-      "error",
-      "property"
     ],
     "dot-notation": [
       "error"
@@ -298,9 +289,6 @@
       "error"
     ],
     "no-extra-label": [
-      "error"
-    ],
-    "no-floating-decimal": [
       "error"
     ],
     "no-global-assign": [
@@ -398,13 +386,6 @@
     "vars-on-top": [
       "error"
     ],
-    "wrap-iife": [
-      "error",
-      "outside",
-      {
-        "functionPrototypeMethods": false
-      }
-    ],
     "yoda": [
       "error"
     ],
@@ -478,9 +459,6 @@
     "new-cap": [
       "error"
     ],
-    "new-parens": [
-      "error"
-    ],
     "no-array-constructor": [
       "error"
     ],
@@ -492,55 +470,6 @@
     ],
     "no-lonely-if": [
       "error"
-    ],
-    "no-mixed-operators": [
-      "error",
-      {
-        "allowSamePrecedence": false,
-        "groups": [
-          [
-            "%",
-            "**"
-          ],
-          [
-            "%",
-            "+"
-          ],
-          [
-            "%",
-            "-"
-          ],
-          [
-            "%",
-            "*"
-          ],
-          [
-            "%",
-            "/"
-          ],
-          [
-            "/",
-            "*"
-          ],
-          [
-            "&",
-            "|",
-            "<<",
-            ">>",
-            ">>>"
-          ],
-          [
-            "==",
-            "!=",
-            "===",
-            "!=="
-          ],
-          [
-            "&&",
-            "||"
-          ]
-        ]
-      }
     ],
     "no-multi-assign": [
       "error"
@@ -589,14 +518,6 @@
     "prefer-object-spread": [
       "error"
     ],
-    "quotes": [
-      "error",
-      "single",
-      {
-        "avoidEscape": true,
-        "allowTemplateLiterals": false
-      }
-    ],
     "spaced-comment": [
       "warn",
       "always",
@@ -615,13 +536,6 @@
         ]
       }
     ],
-    "unicode-bom": [
-      "error",
-      "never"
-    ],
-    "arrow-body-style": [
-      "error"
-    ],
     "no-useless-computed-key": [
       "error"
     ],
@@ -635,9 +549,6 @@
       "error"
     ],
     "object-shorthand": [
-      "error"
-    ],
-    "prefer-arrow-callback": [
       "error"
     ],
     "prefer-const": [
@@ -669,8 +580,11 @@
     "symbol-description": [
       "error"
     ],
-    "prettier/prettier": [
-      "error"
+    "arrow-body-style": [
+      0
+    ],
+    "curly": [
+      0
     ],
     "lines-around-comment": [
       0
@@ -681,10 +595,19 @@
     "no-confusing-arrow": [
       0
     ],
+    "no-mixed-operators": [
+      0
+    ],
     "no-tabs": [
       0
     ],
     "no-unexpected-multiline": [
+      0
+    ],
+    "prefer-arrow-callback": [
+      0
+    ],
+    "quotes": [
       0
     ],
     "array-bracket-newline": [
@@ -718,6 +641,9 @@
       "off"
     ],
     "computed-property-spacing": [
+      "off"
+    ],
+    "dot-location": [
       "off"
     ],
     "eol-last": [
@@ -762,6 +688,9 @@
     "newline-per-chained-call": [
       "off"
     ],
+    "new-parens": [
+      "off"
+    ],
     "no-arrow-condition": [
       "off"
     ],
@@ -772,6 +701,9 @@
       "off"
     ],
     "no-extra-semi": [
+      "off"
+    ],
+    "no-floating-decimal": [
       "off"
     ],
     "no-mixed-spaces-and-tabs": [
@@ -879,6 +811,12 @@
     "template-tag-spacing": [
       "off"
     ],
+    "unicode-bom": [
+      "off"
+    ],
+    "wrap-iife": [
+      "off"
+    ],
     "wrap-regex": [
       "off"
     ],
@@ -890,6 +828,9 @@
     ],
     "no-spaced-func": [
       "off"
+    ],
+    "prettier/prettier": [
+      "error"
     ],
     "constructor-super": [
       "error"
