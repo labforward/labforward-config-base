@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": true,
+    "lib": ["es2020", "dom"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5",
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules"],
+  "compileOnSave": false
+}

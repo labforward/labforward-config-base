@@ -14,15 +14,21 @@
     "import"
   ],
   "rules": {
+    "import/named": [
+      "error"
+    ],
+    "import/no-named-as-default": [
+      "error"
+    ],
+    "import/no-named-as-default-member": [
+      "error"
+    ],
     "import/no-unresolved": [
       "error",
       {
         "commonjs": true,
         "caseSensitive": true
       }
-    ],
-    "import/named": [
-      "error"
     ],
     "import/default": [
       "off"
@@ -31,12 +37,6 @@
       "off"
     ],
     "import/export": [
-      "error"
-    ],
-    "import/no-named-as-default": [
-      "error"
-    ],
-    "import/no-named-as-default-member": [
       "error"
     ],
     "import/no-deprecated": [
@@ -49,11 +49,12 @@
           "test/**",
           "tests/**",
           "spec/**",
+          "**/{test,spec}_helper/**",
           "**/__tests__/**",
           "**/__mocks__/**",
-          "test.{js,jsx}",
-          "test-*.{js,jsx}",
-          "**/*{.,_}{test,spec}.{js,jsx}",
+          "test.{js,jsx,ts,tsx}",
+          "test-*.{js,jsx,ts,tsx}",
+          "**/*{.,_}{test,spec}.{js,jsx,ts,tsx}",
           "**/jest.config.js",
           "**/jest.setup.js",
           "**/vue.config.js",
@@ -101,7 +102,9 @@
       {
         "js": "never",
         "mjs": "never",
-        "jsx": "never"
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
     "import/order": [
@@ -991,8 +994,8 @@
       }
     },
     "import/extensions": [
-      ".js",
       ".mjs",
+      ".js",
       ".jsx"
     ],
     "import/core-modules": [],

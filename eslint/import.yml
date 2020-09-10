@@ -2,10 +2,6 @@ plugins:
   - 'import'
 
 settings:
-  import/resolver:
-    node:
-      extensions: ['.mjs', '.js', '.json']
-  import/extensions: ['.js', '.mjs', '.jsx']
   import/core-modules: []
   import/ignore:
     - node_modules
@@ -21,10 +17,6 @@ rules:
     - commonjs: true
       caseSensitive: true
 
-  # ensure named imports coupled with named exports
-  # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md#when-not-to-use-it
-  import/named: error
-
   # ensure default import coupled with default export
   # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md#when-not-to-use-it
   import/default: off
@@ -37,14 +29,6 @@ rules:
   # disallow invalid exports, e.g. multiple defaults
   # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md
   import/export: error
-
-  # do not allow a default import name to match a named export
-  # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
-  import/no-named-as-default: error
-
-  # warn on accessing default export property names that are also named exports
-  # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
-  import/no-named-as-default-member: error
 
   # disallow use of jsdoc-marked-deprecated imports
   # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
@@ -59,11 +43,12 @@ rules:
         - 'test/**' # tape, common npm pattern
         - 'tests/**' # also common npm pattern
         - 'spec/**' # mocha, rspec-like pattern
+        - '**/{test,spec}_helper/**' # global helper files
         - '**/__tests__/**' # jest pattern
         - '**/__mocks__/**' # jest pattern
-        - 'test.{js,jsx}' # repos with a single test file
-        - 'test-*.{js,jsx}' # repos with multiple top-level test files
-        - '**/*{.,_}{test,spec}.{js,jsx}' # tests where the extension or filename suffix denotes that it is a test
+        - 'test.{js,jsx,ts,tsx}' # repos with a single test file
+        - 'test-*.{js,jsx,ts,tsx}' # repos with multiple top-level test files
+        - '**/*{.,_}{test,spec}.{js,jsx,ts,tsx}' # tests where the extension or filename suffix denotes that it is a test
         - '**/jest.config.js' # jest config
         - '**/jest.setup.js' # jest setup
         - '**/vue.config.js' # vue-cli config
@@ -126,6 +111,8 @@ rules:
     - js: never
       mjs: never
       jsx: never
+      ts: never
+      tsx: never
 
   # ensure absolute imports are above relative imports and that unassigned imports are ignored
   # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
@@ -249,3 +236,45 @@ rules:
     - ignoreExports: []
       missingExports: true
       unusedExports: true
+
+overrides:
+  - files:
+      - '**/*.ts'
+      - '**/*.tsx'
+
+    settings:
+      import/resolver:
+        typescript:
+          extensions: ['.d.ts', '.ts', '.tsx']
+      import/extensions: ['.d.ts', '.ts', '.tsx']
+
+  - files:
+      - '**/*.mjs'
+      - '**/*.js'
+      - '**/*.jsx'
+
+    settings:
+      import/resolver:
+        node:
+          extensions: ['.mjs', '.js', '.json']
+      import/extensions: ['.mjs', '.js', '.jsx']
+
+    rules:
+      # These checks conflict with typescript built-in checks,
+      # so they should be active only for javascript files
+
+      # Static analysis:
+
+      # ensure named imports coupled with named exports
+      # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md#when-not-to-use-it
+      import/named: error
+
+      # Helpful warnings:
+
+      # do not allow a default import name to match a named export
+      # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
+      import/no-named-as-default: error
+
+      # warn on accessing default export property names that are also named exports
+      # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
+      import/no-named-as-default-member: error
