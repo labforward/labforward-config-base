@@ -21,6 +21,9 @@ env:
 globals:
   I18n: false
   process: true
-rules:
-  react/jsx-uses-vars: error
-  react/prop-types: error
+overrides:
+  - files:
+      - '**/*.ts'
+      - '**/*.tsx'
+    rules:
+      react/prop-types: off
