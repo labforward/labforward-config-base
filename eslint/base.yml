@@ -2,7 +2,7 @@ extends:
   - 'eslint:recommended'
   - 'plugin:prettier/recommended'
   - 'prettier'
-parser: babel-eslint
+parser: '@babel/eslint-parser'
 rules:
   # https://eslint.org/docs/rules/
   # Possible Errors

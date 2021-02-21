@@ -1,3 +1,4 @@
 extends:
   - './eslint/node.yml'
-
+parserOptions:
+  requireConfigFile: false
